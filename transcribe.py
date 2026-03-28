@@ -48,15 +48,6 @@ result = model.transcribe("output.wav")
 with open('command.txt', 'w') as f:
     f.write(result["text"])
 
+subprocess.Popen('python runner.py', shell=True)
 
 
-with open('command.txt') as f:
-    text = f.read()
-if 'discord' in text.lower():
-    subprocess.Popen('discord', shell=True)
-if 'steam' in text.lower():
-    subprocess.Popen('steam', shell=True)
-if 'pc' in text.lower():
-    subprocess.Popen('xdg-open https://pcpartpicker.com', shell=True)
-if 'Arch wiki' in text.lower():
-    subprocess.Popen('xdg-open https://wiki.archlinux.org/title/Main_page', shell=True)
